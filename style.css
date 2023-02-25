@@ -1,0 +1,10 @@
+.container{
+    display: grid;
+    margin-top: 200px;
+    margin-left: 200px;
+    max-width: 300px;
+}
+
+button{
+   border-radius: 40px; 
+}
