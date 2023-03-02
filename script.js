@@ -3,8 +3,9 @@ $(document).ready(function () {
 
     $("button").click(timerCountdown);
 
+// click button to start the time and show questions 
     function timerCountdown() {
-        showElements();
+        showScore();
         let seconds = 5;
         const intervAl = setInterval(()=>{
             seconds--;
@@ -17,8 +18,8 @@ $(document).ready(function () {
         },1000);
     }
 
-    function showElements() {
-        $("#emptyTime").append("<h5>Time:<span id='current-time'></span></h5>");
+// show score on page
+    function showScore(){
         $("#emptyScore").append("<h5>Score:<span></span></h5>");
     }
 
