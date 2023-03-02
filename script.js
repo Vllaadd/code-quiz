@@ -9,10 +9,10 @@ $(document).ready(function () {
         const intervAl = setInterval(()=>{
             seconds--;
             console.log(seconds);
-            $("#emptyTime").html(seconds);
+            $("#emptyTime").html("Time: " + seconds);
             if(seconds<0){
                 clearInterval(intervAl);
-                $("#emptyTime").html("That's all folks!");
+                $("#emptyTime").html("Time Is Up!");
             };
         },1000);
     }
