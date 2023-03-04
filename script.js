@@ -26,13 +26,27 @@ $(document).ready(function () {
 
     function startQuiz(){
         $("#startBttn").remove();
-        let questionOne = $("<button></button>").text("Question 1");
-        let questionTwo = $("<button></button>").text("Question 2");
-        let questionThree = $("<button></button>").text("Question 3");
-        let questionFour = $("<button></button>").text("Question 4");
-        $(".quizSpace").append(questionOne, questionTwo, questionThree, questionFour);
+        let questionOne = $("<button></button>");
+        let questionOneString = JSON.stringify(questions);
+        let questionOneParse = JSON.parse(questionOneString);
+        questionOneParse.text(questionOneString[1][1]);
+        $(".quizSpace").append(questionOne);
+        // let questionOne = $("<button></button>").text("Question 1");
+        // let questionTwo = $("<button></button>").text("Question 2");
+        // let questionThree = $("<button></button>").text("Question 3");
+        // let questionFour = $("<button></button>").text("Question 4");
+        // $(".quizSpace").append(questionTwo, questionThree, questionFour);
     }
-
+        
+    
+    
+    // function questionOne(question){
+    //     let questionOne = $("<button></button>");
+    //     let questionOneString = JSON.stringify(question);
+    //     let questionOneParse = JSON.parse(questionOneString);
+    //     questionOne.text(questions[1][1]);
+    //     $(".quizSpace").append(questionOne);
+    //     }
 
 });
  
