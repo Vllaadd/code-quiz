@@ -26,11 +26,11 @@ $(document).ready(function () {
 
     function startQuiz(){
         $("#startBttn").remove();
-        let questionOne = $("<p></p>").text("Question 1");
+        let questionOne = $("<button></button>").text("Question 1");
         let questionTwo = $("<button></button>").text("Question 2");
         let questionThree = $("<button></button>").text("Question 3");
         let questionFour = $("<button></button>").text("Question 4");
-        $("#quizSpace").append(questionOne, questionTwo, questionThree, questionFour);
+        $(".quizSpace").append(questionOne, questionTwo, questionThree, questionFour);
     }
 
 
