@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
 
-    $("button").click(timerCountdown);
+    $("button").click(startButton);
 
 // click button to start the time and show questions 
-    function timerCountdown() {
+    function startButton() {
         showScore();
         startQuiz();
         let seconds = 5;
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     function startQuiz(){
         $("#startBttn").remove();
-        let questionOne = $("<button></button>").text("Question 1");
+        let questionOne = $("<p></p>").text("Question 1");
         let questionTwo = $("<button></button>").text("Question 2");
         let questionThree = $("<button></button>").text("Question 3");
         let questionFour = $("<button></button>").text("Question 4");
