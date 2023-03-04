@@ -7,16 +7,16 @@ $(document).ready(function () {
     function startButton() {
         showScore();
         startQuiz();
-        let seconds = 5;
-        const intervAl = setInterval(()=>{
-            seconds--;
-            console.log(seconds);
-            $("#timeDiv").html("Time: " + seconds);
-            if(seconds<0){
-                clearInterval(intervAl);
-                $("#timeDiv").html("Time Is Up!");
-            };
-        },1000);
+        // let seconds = 5;
+        // const intervAl = setInterval(()=>{
+        //     seconds--;
+        //     console.log(seconds);
+        //     $("#timeDiv").html("Time: " + seconds);
+        //     if(seconds<0){
+        //         clearInterval(intervAl);
+        //         $("#timeDiv").html("Time Is Up!");
+        //     };
+        // },1000);
     }
 
 // show score on page
@@ -25,22 +25,21 @@ $(document).ready(function () {
     }
 
     function startQuiz(){
-        questions.forEach(function(question){
-            $("#startBttn").remove();
-        let questionOne = $("<button></button>").text(question.answers[11]);
-        let questionTwo = $("<button></button>").text(question.answers[12]);
-        let questionThree = $("<button></button>").text(question.answers[13]);
-        let questionFour = $("<button></button>").text(question.answers[14]);
-        let questionFive = $("<button></button>").text(question.answers[15]);
-        let questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
-        $(".quizSpace").append(questions);
-        })
-        
-    }
-        
-    
-    
- 
+        $("#startBttn").remove();
+            let keys = Object.keys(questions);
+            keys.forEach((key, index)=>{
+            let questionsBttn = $("<button></button>").html(`${key} : ${questions[key]}`);
+            $(".quizSpace").append(questionsBttn);
+            });
+        }
+        // let questionOne = $("<button></button>").text(question.answers[11]);
+        // let questionTwo = $("<button></button>").text(question.answers[12]);
+        // let questionThree = $("<button></button>").text(question.answers[13]);
+        // let questionFour = $("<button></button>").text(question.answers[14]);
+        // let questionFive = $("<button></button>").text(question.answers[15]);
+        // let questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
+        // $(".quizSpace").append(questions);
+        // })
 
 });
  
