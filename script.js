@@ -27,29 +27,20 @@ $(document).ready(function () {
     function startQuiz(){
         questions.forEach(function(question){
             $("#startBttn").remove();
-        let questionDiv = $("<button></button>").text(question.answers[11] ++)
-        // .text(question.answers[12]).text(question.answers[13]).text(question.answers[14]).text(question.answers[15]);
-        // console.log(question.answers)
-        // questionOne.text(question.answers[21]);
-        $(".quizSpace").append(questionDiv);
+        let questionOne = $("<button></button>").text(question.answers[11]);
+        let questionTwo = $("<button></button>").text(question.answers[12]);
+        let questionThree = $("<button></button>").text(question.answers[13]);
+        let questionFour = $("<button></button>").text(question.answers[14]);
+        let questionFive = $("<button></button>").text(question.answers[15]);
+        let questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
+        $(".quizSpace").append(questions);
         })
         
-        // let questionOne = $("<button></button>").text("Question 1");
-        // let questionTwo = $("<button></button>").text("Question 2");
-        // let questionThree = $("<button></button>").text("Question 3");
-        // let questionFour = $("<button></button>").text("Question 4");
-        // $(".quizSpace").append(questionTwo, questionThree, questionFour);
     }
         
     
     
-    // function questionOne(question){
-    //     let questionOne = $("<button></button>");
-    //     let questionOneString = JSON.stringify(question);
-    //     let questionOneParse = JSON.parse(questionOneString);
-    //     questionOne.text(questions[1][1]);
-    //     $(".quizSpace").append(questionOne);
-    //     }
+ 
 
 });
  
