@@ -26,9 +26,12 @@ $(document).ready(function () {
 
     function startQuiz(){
         $("#startBttn").remove();
-    Object.values(questions.answers).forEach(val => console.log(val));
-            // $(".quizSpace").append(questionBttns);
-            };
+    Object.values(questions).forEach(question => {
+        console.log(question.answers);
+        $(".quizSpace").val(question.answers).append(questions);
+        // $(".quizSpace").append(questions);
+    }) 
+};
     
         // let questionOne = $("<button></button>").text(question.answers[11]);
         // let questionTwo = $("<button></button>").text(question.answers[12]);
