@@ -6,7 +6,7 @@ $(document).ready(function () {
 // click button to start the time and show questions 
     function startButton() {
         showScore();
-        startQuiz();
+        questionOne();
         // let seconds = 5;
         // const intervAl = setInterval(()=>{
         //     seconds--;
@@ -24,25 +24,24 @@ $(document).ready(function () {
         $("#scoreDiv").append("<h5>Score:<span></span></h5>");
     }
 
-    function startQuiz(){
+    function questionOne(){
         $("#startBttn").remove();
-    Object.values(questions).forEach(question => {
-        let questionString = JSON.stringify(question);
-        let questionParsed = JSON.parse(questionString);
-        console.log(questionParsed);
-       let finalQuestion = $("<p>").text(questionParsed);
-        $(".quizSpace").append(finalQuestion);
-    })
-};
+        let display = $(".quizSpace");
+       questions.forEach(question =>{
+        let questOne = questions[question]
+       let qOne = $("<h5></h5>").text(questOne[0]);
+       qOne.append(display);
+           })
+        }
     
-        // let questionOne = $("<button></button>").text(question.answers[11]);
-        // let questionTwo = $("<button></button>").text(question.answers[12]);
-        // let questionThree = $("<button></button>").text(question.answers[13]);
-        // let questionFour = $("<button></button>").text(question.answers[14]);
-        // let questionFive = $("<button></button>").text(question.answers[15]);
-        // let questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
-        // $(".quizSpace").append(questions);
-        // })
+
 
 });
  
+// Object.values(questions).forEach(question => {
+//     let questionString = JSON.stringify(question);
+//     let questionParsed = JSON.parse(questionString);
+//     console.log(questionParsed);
+//    let finalQuestion = $("<p>").text(questionParsed);
+//     $(".quizSpace").append(finalQuestion);
+// })
