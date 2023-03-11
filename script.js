@@ -27,10 +27,12 @@ $(document).ready(function () {
     function startQuiz(){
         $("#startBttn").remove();
     Object.values(questions).forEach(question => {
-        console.log(question.answers);
-        $(".quizSpace").val(question.answers).append(questions);
-        // $(".quizSpace").append(questions);
-    }) 
+        let questionString = JSON.stringify(question);
+        let questionParsed = JSON.parse(questionString);
+        console.log(questionParsed);
+       let finalQuestion = $("<p>").text(questionParsed);
+        $(".quizSpace").append(finalQuestion);
+    })
 };
     
         // let questionOne = $("<button></button>").text(question.answers[11]);
