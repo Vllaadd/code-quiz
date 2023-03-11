@@ -26,16 +26,11 @@ $(document).ready(function () {
 
     function questionOne(){
         $("#startBttn").remove();
+        $("<button onclick'questionTwo'></button>").append("quiz-space");
        for(let i=0; i<questions.length; i++){
         console.log(questions["question"], questions[0].answers["11"], questions[0].answers["12"], questions[0].answers["13"], questions[0].answers["14"]);
        }
     }
 
-    // function questionTwo(){
-    //     $("#startBttn").remove();
-    //    for(let i=0; i<questions.length; i++){
-    //     console.log(questions[0].answers["11"]);
-    //    }
-    // }
 
 });
