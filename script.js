@@ -26,22 +26,16 @@ $(document).ready(function () {
 
     function questionOne(){
         $("#startBttn").remove();
-        let display = $(".quizSpace");
-       questions.forEach(question =>{
-        let questOne = questions[question]
-       let qOne = $("<h5></h5>").text(questOne[0]);
-       qOne.append(display);
-           })
-        }
-    
+       for(let i=0; i<questions.length; i++){
+        console.log(questions["question"], questions[0].answers["11"], questions[0].answers["12"], questions[0].answers["13"], questions[0].answers["14"]);
+       }
+    }
 
+    // function questionTwo(){
+    //     $("#startBttn").remove();
+    //    for(let i=0; i<questions.length; i++){
+    //     console.log(questions[0].answers["11"]);
+    //    }
+    // }
 
 });
- 
-// Object.values(questions).forEach(question => {
-//     let questionString = JSON.stringify(question);
-//     let questionParsed = JSON.parse(questionString);
-//     console.log(questionParsed);
-//    let finalQuestion = $("<p>").text(questionParsed);
-//     $(".quizSpace").append(finalQuestion);
-// })
