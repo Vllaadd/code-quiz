@@ -18,11 +18,10 @@ $(document).ready(function () {
         $(".quiz-space").append("<button>" + questions[0]["answers"]["12"] + "</button>");
         $(".quiz-space").append("<button>" + questions[0]["answers"]["13"] + "</button>");
         $(".quiz-space").append("<button>" + questions[0]["answers"]["14"] + "</button><br/><br/>");
-        $(".quiz-space").append("<button id='question-two'>Go to question two</button>");
         $("#question-two").show();
       }
 
-   $("#question-two").click(function(){
+   $("#question-two").on("click", "#question-two", function(){
     showQuestionTwo();
    });
 
