@@ -1,15 +1,9 @@
 $(document).ready(function () {
+    $("#question-two").hide();
+
     $("#start-button").click(function(){
-        showScore();
         showQuestionOne();
     });
-
-// show score on page
-    function showScore(){
-        $("#scoreDiv").append("<h5>Score:<span></span></h5>");
-    }
-
-
 
     function showQuestionOne(){
         $("#start-button").remove();
@@ -18,15 +12,15 @@ $(document).ready(function () {
         $(".quiz-space").append("<button>" + questions[0]["answers"]["12"] + "</button>");
         $(".quiz-space").append("<button>" + questions[0]["answers"]["13"] + "</button>");
         $(".quiz-space").append("<button>" + questions[0]["answers"]["14"] + "</button><br/><br/>");
-        $("#question-two").show();
-      }
+        $(".quiz-space").append($("<button>").attr("id", "question-two").text("Go to question two").appendTo(".quiz-space"));
+      };
 
-   $("#question-two").on("click", "#question-two", function(){
+
+    $("#question-two").click(function(){
     showQuestionTwo();
    });
 
    function showQuestionTwo(){
     console.log("Hi, I am finally working!");
    };
-
 });
