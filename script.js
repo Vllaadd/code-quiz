@@ -4,6 +4,7 @@ $(document).ready(function () {
         showQuestionOne();
     });
 
+//question one function
     function showQuestionOne(){
         $("#start-button").remove();
         $(".quiz-space").append("<button>" + questions[0]["question"] + "</button><br/>");
@@ -15,12 +16,11 @@ $(document).ready(function () {
             id: "question-two",
             text: "Go to question two"
         }).appendTo(".quiz-space");
+        $("#question-two").click(function(){
+            showQuestionTwo();
+           });
     };
 
-
-    $("#question-two").click(function(){
-    showQuestionTwo();
-   });
 
    function showQuestionTwo(){
     console.log("Hi, I am finally working!");
