@@ -4,14 +4,17 @@ $(document).ready(function () {
         showQuestionOne();
     });
 
-    //question one••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+//question one••••••••••••••••••••••••••••••••••••••••••••••••••••••••
     function showQuestionOne() {
         $("#start-button").remove();
-        $(".quiz-space").append("<button>" + questions[0]["question"] + "</button><br/>");
-        $(".quiz-space").append("<button>" + questions[0]["answers"]["11"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[0]["answers"]["12"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[0]["answers"]["13"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[0]["answers"]["14"] + "</button><br/><br/>");
+        const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
+        cardEl.append("<div>" + questions[0]["question"] + "</div>").addClass("card-header");
+        const ulEl = $("<ul>").addClass("list-group list-group-flush");
+        const answerOne = $("<li>" + questions[0]["answers"]["11"] + "</li>").addClass("list-group-item");
+        const answerTwo = $("<li>" + questions[0]["answers"]["12"] + "</li>").addClass("list-group-item");
+        const answerThree = $("<li>" + questions[0]["answers"]["13"] + "</li>").addClass("list-group-item");
+        const answerFour = $("<li>" + questions[0]["answers"]["14"] + "</li>").addClass("list-group-item");
+        $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
         $("<button>", {
             id: "question-two",
             text: "Go to question two"
@@ -19,16 +22,20 @@ $(document).ready(function () {
         $("#question-two").click(function () {
             showQuestionTwo();
         });
-    };
+      }
 
 //question two••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• 
     function showQuestionTwo() {
-        $("#question-two").remove();
-        $(".quiz-space").append("<button>" + questions[1]["question"] + "</button><br/>");
-        $(".quiz-space").append("<button>" + questions[1]["answers"]["21"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[1]["answers"]["22"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[1]["answers"]["23"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[1]["answers"]["24"] + "</button><br/><br/>");
+        $(cardEl).remove();
+        const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
+        cardEl.append("<div>" + questions[1]["question"] + "</div>").addClass("card-header");
+        const ulEl = $("<ul>").addClass("list-group list-group-flush");
+        const answerOne = $("<li>" + questions[1]["answers"]["21"] + "</li>").addClass("list-group-item");
+        const answerTwo = $("<li>" + questions[1]["answers"]["22"] + "</li>").addClass("list-group-item");
+        const answerThree = $("<li>" + questions[1]["answers"]["23"] + "</li>").addClass("list-group-item");
+        const answerFour = $("<li>" + questions[1]["answers"]["24"] + "</li>").addClass("list-group-item");
+        $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
+
         $("<button>", {
             id: "question-three",
             text: "Go to question three"
@@ -38,13 +45,18 @@ $(document).ready(function () {
         });
     };
 
+
     function showQuestionThree() {
-        $("#question-three").remove();
-        $(".quiz-space").append("<button>" + questions[2]["question"] + "</button><br/>");
-        $(".quiz-space").append("<button>" + questions[2]["answers"]["31"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[2]["answers"]["32"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[2]["answers"]["33"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[2]["answers"]["34"] + "</button><br/><br/>");
+        $(cardEl).remove();
+        const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
+        cardEl.append("<div>" + questions[2]["question"] + "</div>").addClass("card-header");
+        const ulEl = $("<ul>").addClass("list-group list-group-flush");
+        const answerOne = $("<li>" + questions[2]["answers"]["31"] + "</li>").addClass("list-group-item");
+        const answerTwo = $("<li>" + questions[2]["answers"]["32"] + "</li>").addClass("list-group-item");
+        const answerThree = $("<li>" + questions[2]["answers"]["33"] + "</li>").addClass("list-group-item");
+        const answerFour = $("<li>" + questions[2]["answers"]["34"] + "</li>").addClass("list-group-item");
+        $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
+
         $("<button>", {
             id: "question-four",
             text: "Go to question four"
@@ -55,12 +67,16 @@ $(document).ready(function () {
     };
 
     function showQuestionFour() {
-        $("#question-three").remove();
-        $(".quiz-space").append("<button>" + questions[3]["question"] + "</button><br/>");
-        $(".quiz-space").append("<button>" + questions[3]["answers"]["41"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[3]["answers"]["42"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[3]["answers"]["43"] + "</button>");
-        $(".quiz-space").append("<button>" + questions[3]["answers"]["44"] + "</button><br/><br/>");
+        $(cardEl).remove();
+        const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
+        cardEl.append("<div>" + questions[3]["question"] + "</div>").addClass("card-header");
+        const ulEl = $("<ul>").addClass("list-group list-group-flush");
+        const answerOne = $("<li>" + questions[3]["answers"]["31"] + "</li>").addClass("list-group-item");
+        const answerTwo = $("<li>" + questions[3]["answers"]["32"] + "</li>").addClass("list-group-item");
+        const answerThree = $("<li>" + questions[3]["answers"]["33"] + "</li>").addClass("list-group-item");
+        const answerFour = $("<li>" + questions[3]["answers"]["34"] + "</li>").addClass("list-group-item");
+        $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
+
         $("<button>", {
             id: "score-button",
             text: "See Your Score"
