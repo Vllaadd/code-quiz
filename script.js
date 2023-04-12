@@ -28,6 +28,7 @@ $(document).ready(function () {
 //question two••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• 
     function showQuestionTwo() {
         $(".card").remove();
+        $(".btn").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
         cardEl.append("<div>" + questions[1]["question"] + "</div>").addClass("card-header");
         const ulEl = $("<ul>").addClass("list-group list-group-flush");
@@ -50,6 +51,7 @@ $(document).ready(function () {
 
     function showQuestionThree() {
         $(".card").remove();
+        $(".btn").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
         cardEl.append("<div>" + questions[2]["question"] + "</div>").addClass("card-header");
         const ulEl = $("<ul>").addClass("list-group list-group-flush");
@@ -71,6 +73,7 @@ $(document).ready(function () {
 
     function showQuestionFour() {
         $(".card").remove();
+        $(".btn").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
         cardEl.append("<div>" + questions[3]["question"] + "</div>").addClass("card-header");
         const ulEl = $("<ul>").addClass("list-group list-group-flush");
