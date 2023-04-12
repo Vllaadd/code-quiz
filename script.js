@@ -8,12 +8,14 @@ $(document).ready(function () {
     var score = 0;
 
     function quizScore(answerID){
-        if(answerID == questions[0].correctAnswer){
-            score += 1;
-        }else{
-            score -=0.5;
+        for(var i = 0; i < questions.length; i++){
+            if(answerID == questions[i].correctAnswer){
+                score += 1;
+            }else{
+                score -=0.5;
+            }
+            $("#score").text(score);
         }
-        $("#score").text(score);
     }
 
 //question one••••••••••••••••••••••••••••••••••••••••••••••••••••••••
