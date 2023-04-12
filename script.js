@@ -6,6 +6,15 @@ $(document).ready(function () {
 
     var score = 0;
 
+    function quizScore(answerID){
+        if(answerID == questions[0].correctAnswer){
+            score += 1;
+        }else{
+            score -=0.5;
+        }
+        $("#score").text(score);
+    }
+
 //question one••••••••••••••••••••••••••••••••••••••••••••••••••••••••
     function showQuestionOne() {
         $("#start-button").remove();
@@ -15,19 +24,31 @@ $(document).ready(function () {
         const answerOne = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-11")
-            .text(questions[0]["answers"]["11"]);
+            .text(questions[0]["answers"]["11"])
+            .click(function(){
+                quizScore(11);
+            })
         const answerTwo = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-12")
-            .text(questions[0]["answers"]["12"]);
+            .text(questions[0]["answers"]["12"])
+            .click(function(){
+                quizScore(12);
+            })
         const answerThree = $("<li>")
             .addClass("list-group-item")
             .attr("id","answer-13")
-            .text(questions[0]["answers"]["13"]);
+            .text(questions[0]["answers"]["13"])
+            .click(function(){
+                quizScore(13);
+            })
         const answerFour = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-14")
-            .text(questions[0]["answers"]["14"]);
+            .text(questions[0]["answers"]["14"])
+            .click(function(){
+                quizScore(14);
+            })
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
         $("<button>", {
             class: "btn btn-secondary",
@@ -38,7 +59,6 @@ $(document).ready(function () {
             showQuestionTwo();
         });
       }
-//score for question one••••••••••••••••••••••••••••••••••••••••••••••••••
 
 
 //question two••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• 
