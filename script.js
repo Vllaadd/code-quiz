@@ -72,7 +72,7 @@ $(document).ready(function () {
         });
     };
 
-
+//question three••••••••••••••••••••••••••••••••••••••••••••••••••••••
     function showQuestionThree() {
         $(".card").remove();
         $(".btn").remove();
@@ -107,6 +107,7 @@ $(document).ready(function () {
         });
     };
 
+ //question four••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••   
     function showQuestionFour() {
         $(".card").remove();
         $(".btn").remove();
