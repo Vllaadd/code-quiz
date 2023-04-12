@@ -4,6 +4,7 @@ $(document).ready(function () {
         showQuestionOne();
     });
 
+//calculating score••••••••••••••••••••••••••••••••••••••••••••••••••
     var score = 0;
 
     function quizScore(answerID){
@@ -71,19 +72,31 @@ $(document).ready(function () {
         const answerOne = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-21")
-            .text(questions[1]["answers"]["21"]);
+            .text(questions[1]["answers"]["21"])
+            .click(function(){
+                quizScore(21);
+            })
         const answerTwo = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-22")
-            .text(questions[1]["answers"]["22"]);
+            .text(questions[1]["answers"]["22"])
+            .click(function(){
+                quizScore(22);
+            })
         const answerThree = $("<li>")
             .addClass("list-group-item")
             .attr("id","answer-23")
-            .text(questions[1]["answers"]["23"]);
+            .text(questions[1]["answers"]["23"])
+            .click(function(){
+                quizScore(23);
+            })
         const answerFour = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-24")
-            .text(questions[1]["answers"]["24"]);
+            .text(questions[1]["answers"]["24"])
+            .click(function(){
+                quizScore(24);
+            })
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
 
         $("<button>", {
@@ -106,19 +119,31 @@ $(document).ready(function () {
         const answerOne = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-31")
-            .text(questions[2]["answers"]["31"]);
+            .text(questions[2]["answers"]["31"])
+            .click(function(){
+                quizScore(31);
+            })
         const answerTwo = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-32")
-            .text(questions[2]["answers"]["32"]);
+            .text(questions[2]["answers"]["32"])
+            .click(function(){
+                quizScore(32);
+            })
         const answerThree = $("<li>")
             .addClass("list-group-item")
             .attr("id","answer-33")
-            .text(questions[2]["answers"]["33"]);
+            .text(questions[2]["answers"]["33"])
+            .click(function(){
+                quizScore(33);
+            })
         const answerFour = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-34")
-            .text(questions[2]["answers"]["34"]);
+            .text(questions[2]["answers"]["34"])
+            .click(function(){
+                quizScore(34);
+            })
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
 
         $("<button>", {
@@ -141,33 +166,39 @@ $(document).ready(function () {
         const answerOne = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-41")
-            .text(questions[3]["answers"]["41"]);
+            .text(questions[3]["answers"]["41"])
+            .click(function(){
+                quizScore(41);
+            })
         const answerTwo = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-42")
-            .text(questions[3]["answers"]["42"]);
+            .text(questions[3]["answers"]["42"])
+            .click(function(){
+                quizScore(42);
+            })
         const answerThree = $("<li>")
             .addClass("list-group-item")
             .attr("id","answer-43")
-            .text(questions[3]["answers"]["43"]);
+            .text(questions[3]["answers"]["43"])
+            .click(function(){
+                quizScore(43);
+            })
         const answerFour = $("<li>")
             .addClass("list-group-item")
             .attr("id", "answer-44")
-            .text(questions[3]["answers"]["44"]);
+            .text(questions[3]["answers"]["44"])
+            .click(function(){
+                quizScore(44);
+            })
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
 
         $("<button>", {
             class: "btn btn-secondary",
             id: "score-button",
-            text: "See Your Score"
+            text: "Game Over"
         }).appendTo(".quiz-space");
-        $("#score-button").click(function () {
-            seeYourScore();
-        });
+       
     };
-
-    function seeYourScore(){
-        console.log("Congratulations! Your Score is One million Points")
-    }
 
 });
