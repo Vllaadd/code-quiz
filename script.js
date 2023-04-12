@@ -4,6 +4,8 @@ $(document).ready(function () {
         showQuestionOne();
     });
 
+    var score = 0;
+
 //question one••••••••••••••••••••••••••••••••••••••••••••••••••••••••
     function showQuestionOne() {
         $("#start-button").remove();
@@ -36,6 +38,8 @@ $(document).ready(function () {
             showQuestionTwo();
         });
       }
+//score for question one••••••••••••••••••••••••••••••••••••••••••••••••••
+
 
 //question two••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• 
     function showQuestionTwo() {
