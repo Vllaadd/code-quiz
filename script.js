@@ -16,7 +16,8 @@ $(document).ready(function () {
         const answerFour = $("<li>" + questions[0]["answers"]["14"] + "</li>").addClass("list-group-item");
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
         $("<button>", {
-            id: "question-two",
+            class: "btn btn-secondary",
+            id: "btn btn-secondary",
             text: "Go to question two"
         }).appendTo(".quiz-space");
         $("#question-two").click(function () {
@@ -37,6 +38,7 @@ $(document).ready(function () {
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
 
         $("<button>", {
+            class: "btn btn-secondary",
             id: "question-three",
             text: "Go to question three"
         }).appendTo(".quiz-space");
@@ -58,6 +60,7 @@ $(document).ready(function () {
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
 
         $("<button>", {
+            class: "btn btn-secondary",
             id: "question-four",
             text: "Go to question four"
         }).appendTo(".quiz-space");
@@ -78,6 +81,7 @@ $(document).ready(function () {
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
 
         $("<button>", {
+            class: "btn btn-secondary",
             id: "score-button",
             text: "See Your Score"
         }).appendTo(".quiz-space");
