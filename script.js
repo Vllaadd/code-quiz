@@ -17,7 +17,7 @@ $(document).ready(function () {
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
         $("<button>", {
             class: "btn btn-secondary",
-            id: "btn btn-secondary",
+            id: "question-two",
             text: "Go to question two"
         }).appendTo(".quiz-space");
         $("#question-two").click(function () {
@@ -74,10 +74,10 @@ $(document).ready(function () {
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
         cardEl.append("<div>" + questions[3]["question"] + "</div>").addClass("card-header");
         const ulEl = $("<ul>").addClass("list-group list-group-flush");
-        const answerOne = $("<li>" + questions[3]["answers"]["31"] + "</li>").addClass("list-group-item");
-        const answerTwo = $("<li>" + questions[3]["answers"]["32"] + "</li>").addClass("list-group-item");
-        const answerThree = $("<li>" + questions[3]["answers"]["33"] + "</li>").addClass("list-group-item");
-        const answerFour = $("<li>" + questions[3]["answers"]["34"] + "</li>").addClass("list-group-item");
+        const answerOne = $("<li>" + questions[3]["answers"]["41"] + "</li>").addClass("list-group-item");
+        const answerTwo = $("<li>" + questions[3]["answers"]["42"] + "</li>").addClass("list-group-item");
+        const answerThree = $("<li>" + questions[3]["answers"]["43"] + "</li>").addClass("list-group-item");
+        const answerFour = $("<li>" + questions[3]["answers"]["44"] + "</li>").addClass("list-group-item");
         $(".quiz-space").append(cardEl.append(ulEl.append(answerOne, answerTwo, answerThree, answerFour)));
 
         $("<button>", {
