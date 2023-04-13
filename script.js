@@ -1,25 +1,42 @@
-$(document).ready(function () {
-//home page - start button•••••••••••••••••••••••••••••••••••••••••••••••
-    $("#start-button").click(function () {
-        showQuestionOne();
-    });
-
 //calculating score••••••••••••••••••••••••••••••••••••••••••••••••••
     var score = 0;
 
     function quizScore(answerID){
-        for(var i = 0; i < questions.length; i++){
-            if(answerID == questions[i].correctAnswer){
+            if(answerID == questions[currentQuestion].correctAnswer){
                 score += 1;
             }else{
                 score -=0.5;
             }
+        }
+
+        function showResults(){
             $("#score").text(score);
         }
-    }
+
+        function showQuestion(question){
+
+        }
+
+        var currentQuestion = 0;
+
+        $(document).ready(function () {
+            $("#start-button").click(function () {
+                showQuestion(questions[currentQuestion]);
+            });
+
+        $(".quiz-space").on("click", ".list-group-item", function(){
+            var answerID = $(this).attr("id");
+            quizScore(answerID);
+            currentQuestion +=1;
+            if(currentQuestion < questions.length){
+                showQuestion(questions[currentQuestion]);
+            }else{
+                showResults();
+            }
+        })
 
 //question one••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-    function showQuestionOne() {
+    function showQuestion() {
         $("#start-button").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
         cardEl.append("<div>" + questions[0]["question"] + "</div>").addClass("card-header");
@@ -65,7 +82,7 @@ $(document).ready(function () {
 
 
 //question two••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• 
-    function showQuestionTwo() {
+    function showQuestion() {
         $(".card").remove();
         $(".btn").remove();
         const cardEl = $("<div>")
@@ -116,7 +133,7 @@ $(document).ready(function () {
     };
 
 //question three••••••••••••••••••••••••••••••••••••••••••••••••••••••
-    function showQuestionThree() {
+    function showQuestion() {
         $(".card").remove();
         $(".btn").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
@@ -163,7 +180,7 @@ $(document).ready(function () {
     };
 
  //question four••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••   
-    function showQuestionFour() {
+    function showQuestion() {
         $(".card").remove();
         $(".btn").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
