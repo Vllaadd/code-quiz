@@ -13,16 +13,24 @@
             $("#score").text(score);
         }
 
-        function showQuestion(question){
-
-        }
 
         var currentQuestion = 0;
 
         $(document).ready(function () {
             $("#start-button").click(function () {
-                showQuestion(questions[currentQuestion]);
+                showQuestionOne;
             });
+
+            $("#question-two").click(function () {
+                showQuestionTwo;
+            });
+            $("#question-three").click(function () {
+                showQuestionThree;
+            });
+            $("#question-four").click(function () {
+                showQuestionFour;
+            });
+
 
         $(".quiz-space").on("click", ".list-group-item", function(){
             var answerID = $(this).attr("id");
@@ -36,7 +44,7 @@
         })
 
 //question one••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-    function showQuestion() {
+    function showQuestionOne() {
         $("#start-button").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
         cardEl.append("<div>" + questions[0]["question"] + "</div>").addClass("card-header");
@@ -82,7 +90,7 @@
 
 
 //question two••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• 
-    function showQuestion() {
+    function showQuestionTwo() {
         $(".card").remove();
         $(".btn").remove();
         const cardEl = $("<div>")
@@ -133,7 +141,7 @@
     };
 
 //question three••••••••••••••••••••••••••••••••••••••••••••••••••••••
-    function showQuestion() {
+    function showQuestionThree() {
         $(".card").remove();
         $(".btn").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
@@ -180,7 +188,7 @@
     };
 
  //question four••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••   
-    function showQuestion() {
+    function showQuestionFour() {
         $(".card").remove();
         $(".btn").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
