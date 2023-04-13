@@ -18,17 +18,17 @@
 
         $(document).ready(function () {
             $("#start-button").click(function () {
-                showQuestionOne;
+                showQuestionOne();
             });
 
             $("#question-two").click(function () {
-                showQuestionTwo;
+                showQuestionTwo();
             });
             $("#question-three").click(function () {
-                showQuestionThree;
+                showQuestionThree();
             });
             $("#question-four").click(function () {
-                showQuestionFour;
+                showQuestionFour();
             });
 
 
