@@ -18,17 +18,17 @@
 
         $(document).ready(function () {
             $("#start-button").click(function () {
-                showQuestionOne();
+                showQuestion(1);
             });
 
             $("#question-two").click(function () {
-                showQuestionTwo();
+                showQuestion(2);
             });
             $("#question-three").click(function () {
-                showQuestionThree();
+                showQuestion(3);
             });
             $("#question-four").click(function () {
-                showQuestionFour();
+                showQuestion(4);
             });
 
 
@@ -44,7 +44,7 @@
         })
 
 //question one••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-    function showQuestionOne() {
+    function showQuestion(questionNumber) {
         $("#start-button").remove();
         const cardEl = $("<div>").addClass("card").css({ "width": "18rem" });
         cardEl.append("<div>" + questions[0]["question"] + "</div>").addClass("card-header");
