@@ -29,28 +29,29 @@ function showQuestion(questionNumber) {
       .attr("id", "answer-" + questionNumber + answerID)
       .text(answers[answerID])
       .click(function () {
-        quizScore(questionNumber + answerID);
-        $(this).siblings().off("click"); // remove click handlers from other answers
-        $(".btn").removeAttr("disabled"); // enable next button
+        $(this).addClass("active");
+        $("#next-button").prop("disabled", false);
       });
-    ulEl.append(answer);
+      ulEl.append(answer);
   }
   $(".quiz-space").append(cardEl.append(ulEl));
   if (currentQuestion < questions.length - 1) {
     $("<button>", {
       class: "btn btn-primary",
-      id: "question-" + (questionNumber + 1),
-      text: "Go to question " + (questionNumber + 1),
+      id: "next-button",
+      text: "Next Question",
       disabled: true, // disable button until an answer is selected
     }).appendTo(".quiz-space")
-        .click(function () {
-          currentQuestion++;
-          if (currentQuestion < questions.length) {
-            showQuestion(currentQuestion +1);
-          } else {
-            showResults();
-          }
-        });
+    .click(function () {
+      const selectedAnswerID = $(".active").attr("id");
+      quizScore(selectedAnswerID);
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion(currentQuestion);
+      } else {
+        showResults();
+      }
+    });
   }
 }
 
