@@ -29,7 +29,7 @@ function showQuestion(questionNumber) {
       .attr("id", "answer-" + questionNumber + answerID)
       .text(answers[answerID])
       .click(function () {
-        quizScore(questionNumber + answerID);
+        quizScore(answerID);
         currentQuestion++;
         if (currentQuestion < questions.length) {
           showQuestion(currentQuestion);
