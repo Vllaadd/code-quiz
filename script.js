@@ -7,10 +7,11 @@ function quizScore(answerID) {
   } else {
     score -= 0.5;
   }
+  $("#score").text("Score: " + score);
 }
 
 function showResults() {
-  $("#scoreDiv").text("Score: " + score);
+  $("#score").text("Score: " + score);
 }
 
 function showQuestion(questionNumber) {
@@ -30,6 +31,8 @@ function showQuestion(questionNumber) {
       .click(function () {
         $(this).addClass("active");
         $("#next-button").prop("disabled", false);
+        const selectedAnswerID = $(this).attr("id");
+        quizScore(selectedAnswerID);
       });
       ulEl.append(answer);
   }
@@ -38,18 +41,22 @@ function showQuestion(questionNumber) {
     $("<button>", {
       class: "btn btn-primary",
       id: "next-button",
-      text: "Next Question " + (questionNumber + 1),
+      text: "Next Question",
       disabled: true,
     }).appendTo(".quiz-space")
     .click(function () {
-      const selectedAnswerID = $(".active").attr("id");
-      quizScore(selectedAnswerID);
       currentQuestion++;
-      if (currentQuestion < questions.length) {
-        showQuestion(currentQuestion);
-      } else {
-        showResults();
-      }
+      showQuestion(currentQuestion);
+    });
+  } else {
+    $("<button>", {
+      class: "btn btn-primary",
+      id: "next-button",
+      text: "Show Results",
+      disabled: true,
+    }).appendTo(".quiz-space")
+    .click(function () {
+      showResults();
     });
   }
 }
