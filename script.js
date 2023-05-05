@@ -2,6 +2,8 @@ var score = 0;
 var currentQuestion = 0;
 
 function quizScore(answerID) {
+  console.log('answerID:', answerID);
+  console.log('correctAnswer:', questions[currentQuestion].correctAnswer);
   if (answerID == questions[currentQuestion].correctAnswer) {
     score += 1;
   } else {
@@ -26,7 +28,7 @@ function showQuestion(questionNumber) {
   for (let answerID in answers) {
     const answer = $("<li>")
       .addClass("list-group-item")
-      .attr("id", "answer-" + questionNumber + answerID)
+      .attr("id", answerID)
       .text(answers[answerID])
       .click(function () {
         $(this).addClass("active");
