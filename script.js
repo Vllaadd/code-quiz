@@ -36,7 +36,6 @@ function showQuestion(questionNumber) {
         } else {
           showResults();
         }
-        showResults();
       });
     ulEl.append(answer);
   }
