@@ -1,4 +1,5 @@
 var score = 0;
+var currentQuestion = 0;
 
 function quizScore(answerID) {
   if (answerID == questions[currentQuestion].correctAnswer) {
@@ -9,10 +10,8 @@ function quizScore(answerID) {
 }
 
 function showResults() {
-  $("#score").text(score);
+  $("#scoreDiv").text("Score: " + score);
 }
-
-var currentQuestion = 0;
 
 function showQuestion(questionNumber) {
   $(".card").remove();
@@ -39,8 +38,8 @@ function showQuestion(questionNumber) {
     $("<button>", {
       class: "btn btn-primary",
       id: "next-button",
-      text: "Next Question",
-      disabled: true, // disable button until an answer is selected
+      text: "Next Question " + (questionNumber + 1),
+      disabled: true,
     }).appendTo(".quiz-space")
     .click(function () {
       const selectedAnswerID = $(".active").attr("id");
