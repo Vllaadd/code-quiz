@@ -29,13 +29,9 @@ function showQuestion(questionNumber) {
       .attr("id", "answer-" + questionNumber + answerID)
       .text(answers[answerID])
       .click(function () {
-        quizScore(answerID);
-        currentQuestion++;
-        if (currentQuestion < questions.length) {
-          showQuestion(currentQuestion);
-        } else {
-          showResults();
-        }
+        quizScore(questionNumber + answerID);
+        $(this).siblings().off("click"); // remove click handlers from other answers
+        $(".btn").removeAttr("disabled"); // enable next button
       });
     ulEl.append(answer);
   }
@@ -45,10 +41,16 @@ function showQuestion(questionNumber) {
       class: "btn btn-primary",
       id: "question-" + (questionNumber + 1),
       text: "Go to question " + (questionNumber + 1),
+      disabled: true, // disable button until an answer is selected
     }).appendTo(".quiz-space")
-      .click(function () {
-        showQuestion(questionNumber + 1);
-      });
+        .click(function () {
+          currentQuestion++;
+          if (currentQuestion < questions.length) {
+            showQuestion(currentQuestion +1);
+          } else {
+            showResults();
+          }
+        });
   }
 }
 
