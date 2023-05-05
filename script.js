@@ -43,7 +43,7 @@ function showQuestion(questionNumber) {
   $(".quiz-space").append(cardEl.append(ulEl));
   if (currentQuestion < questions.length - 1) {
     $("<button>", {
-      class: "btn btn-secondary",
+      class: "btn btn-primary",
       id: "question-" + (questionNumber + 1),
       text: "Go to question " + (questionNumber + 1),
     }).appendTo(".quiz-space")
