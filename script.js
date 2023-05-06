@@ -54,7 +54,7 @@ function showQuestion(questionNumber) {
     $("<button>", {
       class: "btn btn-primary",
       id: "next-button",
-      text: "Show Results",
+      text: "The End",
       disabled: true,
     }).appendTo(".quiz-space")
     .click(function () {
